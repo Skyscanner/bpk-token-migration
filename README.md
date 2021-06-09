@@ -35,3 +35,13 @@ npx @skyscanner/bpk-token-migration src/packages
 ```
 
 Scans directories recursively, looking for all files ending in `.scss`. Your `.gitignore` file is respected, no files listed in there will be included.
+
+## Contributing
+
+```sh
+# Run the code locally
+node index.js directory/to/test/on
+
+# Run tests
+npm test
+```
