@@ -23,7 +23,7 @@ const {
 } = require('./utils');
 
 describe('generateReplacementMappings', () => {
-  test('Correct generates mappings', () => {
+  test('Correctly generates mappings', () => {
     const expected = {
       '$bpk-spacing-xs': 'bpk-spacing-xs()',
       '$bpk-spacing-sm': 'bpk-spacing-sm()',
