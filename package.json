@@ -1,7 +1,7 @@
 {
   "name": "@skyscanner/bpk-token-migration",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Utility for replacing Backpack tokens",
   "main": "index.js",
   "bin": {
     "@skyscanner/bpk-token-migration": "index.js"
