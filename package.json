@@ -14,8 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "glob-fs": "^0.1.7",
-    "yargs": "^17.0.1"
+    "glob-fs": "^0.1.7"
   },
   "devDependencies": {
     "eslint-config-skyscanner": "^9.0.1",
