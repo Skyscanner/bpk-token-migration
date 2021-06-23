@@ -2,11 +2,27 @@
 
 [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-token-migration.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-token-migration)
 
-Replaces all instances of [Backpack tokens](https://github.com/Skyscanner/backpack-foundations) in `.scss` files from the old variable-based format, to the new function-based format.
+Command line tool for switching .scss files to use the V2 version of [Backpack tokens](https://github.com/Skyscanner/backpack-foundations)
 
-## Example
+It scans directories recursively, looking for all files ending in `.scss`, then does one of three things depending on which script name you pass in:
 
-### Before
+## `replace-tokens-with-functions`
+
+Replaces all instances of tokens in `.scss` files from the old variable-based format, to the new function-based format.
+
+### Usage
+
+```sh
+# Run on the current directory
+npx @skyscanner/bpk-token-migration replace-tokens-with-functions
+
+# Run on a specific directory
+npx @skyscanner/bpk-token-migration replace-tokens-with-functions directory-name
+```
+
+### Example
+
+#### Before
 
 ```scss
 .my-component {
@@ -15,7 +31,7 @@ Replaces all instances of [Backpack tokens](https://github.com/Skyscanner/backpa
 }
 ```
 
-### After
+#### After
 
 ```scss
 .my-component {
@@ -24,17 +40,83 @@ Replaces all instances of [Backpack tokens](https://github.com/Skyscanner/backpa
 }
 ```
 
-## Usage
+## `disable-v2-spacing`
+
+Adds `$bpk-spacing-v2: false` to the beginning of every `.scss` file. If the line is already present, it will be replaced.
+
+Setting this variable **disables** V2 spacing for any usages of the spacing functions (`bpk-spacing-sm()` etc).
+
+### Usage
 
 ```sh
 # Run on the current directory
-npx @skyscanner/bpk-token-migration
+npx @skyscanner/bpk-token-migration disable-v2-spacing
 
 # Run on a specific directory
-npx @skyscanner/bpk-token-migration src/packages
+npx @skyscanner/bpk-token-migration disable-v2-spacing directory-name
 ```
 
-Scans directories recursively, looking for all files ending in `.scss`. Your `.gitignore` file is respected, no files listed in there will be included.
+### Example
+
+#### Before
+
+```scss
+.my-component {
+  margin: bpk-spacing-sm();
+  padding: bpk-spacing-md() bpk-spacing-base();
+}
+```
+
+#### After
+
+```scss
+$bpk-spacing-v2: false;
+
+.my-component {
+  margin: bpk-spacing-sm();
+  padding: bpk-spacing-md() bpk-spacing-base();
+}
+```
+
+## `enable-v2-spacing`
+
+Adds `$bpk-spacing-v2: true` to the beginning of every `.scss` file. If the line is already present, it will be replaced.
+
+Setting this variable **disables** V2 spacing for any usages of the spacing functions (`bpk-spacing-sm()` etc).
+
+### Usage
+
+```sh
+# Run on the current directory
+npx @skyscanner/bpk-token-migration enable-v2-spacing
+
+# Run on a specific directory
+npx @skyscanner/bpk-token-migration enable-v2-spacing directory-name
+```
+
+### Example
+
+#### Before
+
+```scss
+.my-component {
+  margin: bpk-spacing-sm();
+  padding: bpk-spacing-md() bpk-spacing-base();
+}
+```
+
+#### After
+
+```scss
+$bpk-spacing-v2: true;
+
+.my-component {
+  margin: bpk-spacing-sm();
+  padding: bpk-spacing-md() bpk-spacing-base();
+}
+```
+
+
 
 ## Contributing
 
