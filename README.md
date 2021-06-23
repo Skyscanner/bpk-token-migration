@@ -13,11 +13,7 @@ Replaces all instances of tokens in `.scss` files from the old variable-based fo
 ### Usage
 
 ```sh
-# Run on the current directory
-npx @skyscanner/bpk-token-migration replace-tokens-with-functions
-
-# Run on a specific directory
-npx @skyscanner/bpk-token-migration replace-tokens-with-functions directory-name
+npx @skyscanner/bpk-token-migration replace-tokens-with-functions [directory-name]
 ```
 
 ### Example
@@ -49,11 +45,7 @@ Setting this variable **disables** V2 spacing for any usages of the spacing func
 ### Usage
 
 ```sh
-# Run on the current directory
-npx @skyscanner/bpk-token-migration disable-v2-spacing
-
-# Run on a specific directory
-npx @skyscanner/bpk-token-migration disable-v2-spacing directory-name
+npx @skyscanner/bpk-token-migration disable-v2-spacing [directory-name]
 ```
 
 ### Example
@@ -87,11 +79,7 @@ Setting this variable **disables** V2 spacing for any usages of the spacing func
 ### Usage
 
 ```sh
-# Run on the current directory
-npx @skyscanner/bpk-token-migration enable-v2-spacing
-
-# Run on a specific directory
-npx @skyscanner/bpk-token-migration enable-v2-spacing directory-name
+npx @skyscanner/bpk-token-migration enable-v2-spacing [directory-name]
 ```
 
 ### Example
