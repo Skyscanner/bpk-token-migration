@@ -1,4 +1,4 @@
-# 2.0.0
+# 1.1.0
 
 Added support for setting V2 spacing on or off.
 
